@@ -1,0 +1,506 @@
+/* =========================================
+   CSS Reset, Basic Setup & Smooth Scroll
+   ========================================= */
+html { scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #3e2723;
+    background-color: #FFFBED;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+h1, h2, h3 { color: #8A4B08; }
+a { text-decoration: none; }
+
+/* =========================================
+   NAVBAR & BURGER MENU
+   ========================================= */
+.navbar {
+    background-color: #FFFBED;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(138, 75, 8, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: #8A4B08;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-image {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-links {
+    color: #5d4037;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links:hover { color: #e67e22; }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #8A4B08;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    position: relative;
+    isolation: isolate;
+    background-color: #3e2723;
+    height: calc(80vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 15px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: -1;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #FCEEC0;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: #FFFBED;
+}
+
+/* =========================================
+   Global Section Styles
+   ========================================= */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    scroll-margin-top: 70px;
+}
+
+section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.section-desc {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #5d4037;
+}
+
+.price-note {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e17902;
+    font-weight: 600;
+}
+
+.about-section { background-color: #FCEEC0; }
+.why-us-section { background-color: #FFFBED; }
+.cta-section { background-color: #FCEEC0; }
+.shopee-section { background-color: #FFFBED; }
+.gallery-section { background-color: #FCEEC0; }
+.testimonial-section { background-color: #FFFBED; }
+.contact-section-wrapper { background-color: #FCEEC0; }
+
+/* =========================================
+   Kenapa Kami (Features)
+   ========================================= */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(138, 75, 8, 0.08);
+    flex: 1 1 220px;
+    transition: transform 0.3s;
+    border: 2px solid #FCEEC0;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #e67e22;
+}
+
+.feature-card h3 { color: #e67e22; margin-bottom: 10px; font-size: 1.2rem; }
+
+/* =========================================
+   Buttons (Tombol)
+   ========================================= */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.whatsapp-icon,
+.shopee-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.shopee-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.btn-shopee-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary { background-color: #e67e22; color: #fff; border: 2px solid #e67e22; box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);}
+.btn-primary:hover { background-color: #d35400; border-color: #d35400; transform: translateY(-2px); }
+
+.btn-outline { background-color: transparent; color: #e67e22; border: 2px solid #e67e22; }
+.btn-outline:hover { background-color: #e67e22; color: #fff; }
+
+.btn-shopee { background-color: #e17902; color: #fff; border: 2px solid #e17902; box-shadow: 0 4px 10px rgba(225, 121, 2, 0.3); }
+.btn-shopee:hover { background-color: #d35400; border-color: #d35400; color: #fff; transform: translateY(-2px); }
+
+/* =========================================
+   Galeri Dokumentasi (Square/Kotak)
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); 
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item img:hover { transform: scale(1.15); }
+
+/* =========================================
+   Testimoni (Persegi Panjang - 2 Kolom)
+   ========================================= */
+.testimonial-grid {
+    display: grid;
+    /* Memaksa layout menjadi persis 2 kolom sama besar */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    max-width: 900px; /* Sedikit lebih kecil dari max-width agar lebih rapi */
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    width: 100%;
+    /* Menggunakan padding-top untuk memastikan rasio persegi panjang (16:9 atau sejenisnya) */
+    padding-top: 50%; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    border: 3px solid #eaddb6;
+}
+
+.testimonial-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto akan menyesuaikan bentuk kotak tanpa gepeng */
+    object-position: center top; /* Fokuskan ke bagian atas screenshot jika kepotong */
+    transition: transform 0.4s ease;
+}
+
+.testimonial-item img:hover { transform: scale(1.05); }
+
+
+/* =========================================
+   Modal Lightbox 
+   ========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover { color: #FCEEC0; }
+
+/* =========================================
+   Kontak & Lokasi
+   ========================================= */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info { flex: 1 1 300px; }
+.contact-info p { margin-bottom: 15px; font-size: 1.05rem; }
+.contact-info strong { color: #8A4B08; }
+
+.map-container {
+    flex: 1 1 300px;
+    background-color: #eaddb6;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8A4B08;
+    border: 2px solid #FFFBED;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    background-color: #5d4037;
+    color: #FCEEC0;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   MEDIA QUERIES (SANGAT RESPONSIF)
+   ========================================= */
+@media (min-width: 769px) {
+    .btn { width: auto; }
+    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
+    .gallery-item { height: 180px; }
+    
+    /* Testimoni bisa dibuat lebih lebar sedikit di Desktop */
+    .testimonial-item { padding-top: 40%; } 
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; } 
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: -100%; 
+        opacity: 0;
+        transition: all 0.4s ease;
+        background-color: #FCEEC0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active { left: 0; opacity: 1; }
+    .nav-links {
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #eaddb6;
+    }
+
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .hero h1 { font-size: 2.8rem; }
+    section { padding: 60px 15px; }
+    section h2 { font-size: 2.2rem; }
+    .contact-content { text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; margin-top: 10px;}
+    .hero p { font-size: 1rem; }
+    section { padding: 40px 15px; }
+    section h2 { font-size: 1.8rem; margin-bottom: 15px; }
+    .section-desc { font-size: 0.95rem; margin-bottom: 25px; }
+    .feature-card { padding: 20px; flex: 1 1 100%; }
+    .btn-container { gap: 10px; margin-top: 20px;}
+    
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .gallery-item { height: 110px; }
+
+    /* Testimoni tetap 2 kolom, tapi gap (jarak) diperkecil agar pas di layar kecil */
+    .testimonial-grid { gap: 10px; }
+    .testimonial-item { padding-top: 60%; } /* Biar nggak terlalu gepeng di HP kecil */
+
+    .map-container { min-height: 200px; }
+}
+
+.floating-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1001;
+    width: auto;
+    max-width: calc(100vw - 30px);
+}
+
+@media (max-width: 480px) {
+    .floating-whatsapp {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+.gallery-item picture,
+.testimonial-item picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
